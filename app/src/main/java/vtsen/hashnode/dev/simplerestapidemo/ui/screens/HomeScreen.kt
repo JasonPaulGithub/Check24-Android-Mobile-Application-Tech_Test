@@ -33,16 +33,6 @@ fun HomeScreen(
             )
         }
 
-        item {
-            DefaultButton(
-                text = stringResource(R.string.retrofit_gson),
-                onClick = {
-                    viewModel.updateMealCategoriesWithRetrofitGson()
-                    navigateToMealCategories()
-                },
-            )
-        }
-
     }
 }
 

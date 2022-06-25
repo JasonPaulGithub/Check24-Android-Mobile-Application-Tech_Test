@@ -27,13 +27,13 @@ fun MealCategoriesScreen(viewModel: MainViewModel) {
             )
         }
 
-        if (viewModel.mealCategories != null) {
+        if (viewModel.products != null) {
 
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
             ) {
-                items(items = viewModel.mealCategories!!) { mealCategory ->
-                    MealCategoryItem(mealCategory = mealCategory)
+                items(items = viewModel.products!!) { mealCategory ->
+                    MealCategoryItem(product = mealCategory)
                 }
             }
         }
