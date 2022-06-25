@@ -1,6 +1,5 @@
 package vtsen.hashnode.dev.simplerestapidemo.viewmodel
 
-import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.SimpleJSONModel
 import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -15,6 +14,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.NestedJSONModel
 import vtsen.hashnode.dev.simplerestapidemo.GsonMealData.MealCategory
 import vtsen.hashnode.dev.simplerestapidemo.GsonMealData.asMealCategories
 import vtsen.hashnode.dev.simplerestapidemo.R
@@ -58,25 +58,25 @@ class MainViewModel : ViewModel() {
         mealCategories = null
     }
 
-    fun updateItemCategories() {
-
+    fun callAndParseItemCategories() {
         // Create Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.agify.io/")
+            .baseUrl("https://app.check24.de/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         // Create Service
         val service = retrofit.create(APIService::class.java)
+
         CoroutineScope(Dispatchers.IO).launch {
 
             // Do the GET request and get response
-            val response = service.getEmployees()
+            val response = service.getEmployeesNested()
 
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
 
-                    val items = response.body()
+                    val items = response.body()?.products
                     println(items)
 
                 } else {
@@ -87,9 +87,10 @@ class MainViewModel : ViewModel() {
             }
         }
     }
+
 }
 
 interface APIService {
-    @GET("?name=meelad")
-    suspend fun getEmployees(): Response<SimpleJSONModel>
+    @GET("products-test.json?header")
+    suspend fun getEmployeesNested(): Response<NestedJSONModel>
 }

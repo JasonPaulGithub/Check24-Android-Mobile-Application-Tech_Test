@@ -27,7 +27,7 @@ fun HomeScreen(
             DefaultButton(
                 text = stringResource(R.string.retrofit_item),
                 onClick = {
-                    viewModel.updateItemCategories()
+                    viewModel.callAndParseItemCategories()
                     navigateToMealCategories()
                 },
             )
