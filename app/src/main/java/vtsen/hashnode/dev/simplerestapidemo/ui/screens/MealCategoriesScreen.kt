@@ -27,15 +27,6 @@ fun MealCategoriesScreen(viewModel: MainViewModel) {
             )
         }
 
-        if (viewModel.apiLoadingTime != null) {
-            Text(
-                modifier = Modifier.fillMaxWidth(),
-                text = "API Loading Time: ${viewModel.apiLoadingTime!!} ms",
-                style = MaterialTheme.typography.h5,
-                textAlign = TextAlign.Center,
-            )
-        }
-
         if (viewModel.mealCategories != null) {
 
             LazyColumn(

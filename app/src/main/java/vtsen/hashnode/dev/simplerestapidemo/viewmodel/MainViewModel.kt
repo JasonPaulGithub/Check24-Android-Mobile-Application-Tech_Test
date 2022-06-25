@@ -6,17 +6,23 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.ItemCategory
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.asItemCategories
 import vtsen.hashnode.dev.simplerestapidemo.R
-import vtsen.hashnode.dev.simplerestapidemo.data.MealCategory
-import vtsen.hashnode.dev.simplerestapidemo.data.asMealCategories
+import vtsen.hashnode.dev.simplerestapidemo.GsonMealData.MealCategory
+import vtsen.hashnode.dev.simplerestapidemo.GsonMealData.asMealCategories
 import vtsen.hashnode.dev.simplerestapidemo.repository.MainRepository
-import vtsen.hashnode.dev.simplerestapidemo.repository.remote.ktorkotlinserdes.KtorKotlinSerdesMealsWebService
+import vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitgson.RetrofitGsonItemsWebService
 import vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitgson.RetrofitGsonMealsWebService
-import vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitkotlinserdes.RetrofitKotlinSerdesMealsWebService
-import vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitmoshi.RetrofitMoshiMealsWebService
 import kotlin.system.measureTimeMillis
 
-class MainViewModel(preview: Boolean = false) : ViewModel() {
+class MainViewModel : ViewModel() {
+
+    var itemCategories: List<ItemCategory>? by mutableStateOf(null)
+        private set
+
+    var itemsCategoryTitleStrId: Int? by mutableStateOf(null)
+        private set
 
     var mealCategories: List<MealCategory>? by mutableStateOf(null)
         private set
@@ -31,20 +37,26 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
         private set
 
     private val repository = MainRepository(
-        RetrofitMoshiMealsWebService(),
         RetrofitGsonMealsWebService(),
-        RetrofitKotlinSerdesMealsWebService(),
-        KtorKotlinSerdesMealsWebService(),
+        RetrofitGsonItemsWebService(),
     )
 
-    fun updateMealCategoriesWithRetrofitMoshi() = viewModelScope.launch {
+    fun updateItemCategories() = viewModelScope.launch {
+
+        println("Hello World!")
+
+        // Print API response here.
+
+
+
+        ////
 
         val time = measureTimeMillis {
             clear()
-            mealsCategoryTitleStrId = R.string.retrofit_moshi
+            itemsCategoryTitleStrId = R.string.retrofit_item
 
-            val response = repository.getRetrofitMoshiMealCategories(enablePerformanceTest)
-            mealCategories = response.asMealCategories()
+            val response = repository.getRetrofitGsonItemCategories(enablePerformanceTest)
+            itemCategories = response.asItemCategories()
         }
 
         apiLoadingTime = time.toString()
@@ -61,36 +73,6 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
         }
 
         apiLoadingTime = time.toString()
-    }
-
-    fun updateMealCategoriesWithRetrofitKotlinSerdes() = viewModelScope.launch {
-
-        val time = measureTimeMillis {
-            clear()
-            mealsCategoryTitleStrId = R.string.retrofit_kotlin_serdes
-
-            val response = repository.getRetrofitKotlinSerdesMealCategories(enablePerformanceTest)
-            mealCategories = response.asMealCategories()
-        }
-
-        apiLoadingTime = time.toString()
-    }
-
-    fun updateMealCategoriesWithKtorKotlinSerdes() = viewModelScope.launch {
-
-        val time = measureTimeMillis {
-            clear()
-            mealsCategoryTitleStrId = R.string.ktor_kotlin_serdes
-
-            val response = repository.getKtorKotlinSerdesMealCategories(enablePerformanceTest)
-            mealCategories = response.asMealCategories()
-        }
-
-        apiLoadingTime = time.toString()
-    }
-
-    fun onEnablePerformanceTestClick(value: Boolean) {
-        enablePerformanceTest = value
     }
 
     private fun clear() {

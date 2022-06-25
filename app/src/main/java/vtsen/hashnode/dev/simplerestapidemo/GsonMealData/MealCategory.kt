@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.data
+package vtsen.hashnode.dev.simplerestapidemo.GsonMealData
 
 data class MealCategory(
     val id: String,

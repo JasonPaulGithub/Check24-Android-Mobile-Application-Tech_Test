@@ -15,7 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import vtsen.hashnode.dev.simplerestapidemo.R
-import vtsen.hashnode.dev.simplerestapidemo.data.MealCategory
+import vtsen.hashnode.dev.simplerestapidemo.GsonMealData.MealCategory
 
 @Composable
 fun MealCategoryItem(

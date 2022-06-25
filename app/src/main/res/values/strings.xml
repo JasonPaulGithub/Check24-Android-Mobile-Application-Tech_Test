@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Simple REST API App</string>
-    <string name="retrofit_moshi">Retrofit + Moshi</string>
+    <string name="app_name">Check24 Rest API App</string>
+    <string name="retrofit_item">Check24</string>
     <string name="retrofit_gson">Retrofit + Gson</string>
-    <string name="retrofit_kotlin_serdes">Retrofit + Kotlin Serdes</string>
-    <string name="ktor_kotlin_serdes">Ktor + Kotlin Serdes</string>
 </resources>

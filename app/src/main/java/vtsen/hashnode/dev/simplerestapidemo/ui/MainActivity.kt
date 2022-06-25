@@ -7,8 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import vtsen.hashnode.dev.simplerestapidemo.ui.navigation.BuildNavGraph
-import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 import vtsen.hashnode.dev.simplerestapidemo.ui.theme.SimpleRestApiAppTheme
+import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 
 class MainActivity : ComponentActivity() {
 
@@ -23,7 +23,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun MainScreen(viewModel: MainViewModel) {
-
     SimpleRestApiAppTheme {
         val navController = rememberNavController()
         BuildNavGraph(navController, viewModel)

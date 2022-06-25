@@ -2,20 +2,20 @@ package vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitgson
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import vtsen.hashnode.dev.simplerestapidemo.GsonMealData.GsonMealCategoriesResponse
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.GsonItemCategoriesResponse
 import vtsen.hashnode.dev.simplerestapidemo.repository.MainRepository
 
-class RetrofitGsonMealsWebService {
+class RetrofitGsonItemsWebService {
 
-    private val api: RetrofitGsonMealsApi by lazy {
-        createMealsApi()
+    private val api: RetrofitGsonItemsApi by lazy {
+        createItemsApi()
     }
 
-    suspend fun getMealCategories(): GsonMealCategoriesResponse {
-        return api.getMealCategories()
+    suspend fun getItemCategories(): GsonItemCategoriesResponse {
+        return api.getItemCategories()
     }
 
-    private fun createMealsApi(): RetrofitGsonMealsApi {
+    private fun createItemsApi(): RetrofitGsonItemsApi {
 
         val gsonConverterFactory = GsonConverterFactory.create()
 
@@ -24,6 +24,6 @@ class RetrofitGsonMealsWebService {
             .addConverterFactory(gsonConverterFactory)
             .build()
 
-        return retrofit.create(RetrofitGsonMealsApi::class.java)
+        return retrofit.create(RetrofitGsonItemsApi::class.java)
     }
 }

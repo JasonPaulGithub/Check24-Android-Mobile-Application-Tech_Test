@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.data
+package vtsen.hashnode.dev.simplerestapidemo.GsonMealData
 
 import com.google.gson.annotations.SerializedName
 
