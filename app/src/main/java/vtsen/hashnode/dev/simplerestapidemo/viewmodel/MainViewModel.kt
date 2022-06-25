@@ -1,6 +1,6 @@
 package vtsen.hashnode.dev.simplerestapidemo.viewmodel
 
-import SimpleJSONModel
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.SimpleJSONModel
 import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
