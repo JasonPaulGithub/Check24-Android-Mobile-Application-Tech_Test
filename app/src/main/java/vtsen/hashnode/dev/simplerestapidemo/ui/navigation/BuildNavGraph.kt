@@ -18,7 +18,7 @@ fun BuildNavGraph(navController: NavHostController, viewModel: MainViewModel) {
     ) {
 
         addHomeScreen(navController,this, viewModel)
-        addMealCategoriesScreen(this, viewModel)
+        addItemCategoriesScreen(this, viewModel)
     }
 }
 
@@ -37,7 +37,7 @@ private fun addHomeScreen(
     }
 }
 
-private fun addMealCategoriesScreen(
+private fun addItemCategoriesScreen(
     navGraphBuilder: NavGraphBuilder,
     viewModel: MainViewModel
 ) {

@@ -25,6 +25,7 @@ class MainViewModel : ViewModel() {
         private set
 
     fun callAndParseItems() {
+
         // Create Retrofit
         val retrofit = Retrofit.Builder()
             .baseUrl("https://app.check24.de/")
