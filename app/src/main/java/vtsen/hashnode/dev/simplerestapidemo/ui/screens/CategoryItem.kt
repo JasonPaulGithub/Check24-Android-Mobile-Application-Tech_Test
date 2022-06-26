@@ -21,9 +21,7 @@ import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
 import vtsen.hashnode.dev.simplerestapidemo.R
 
 @Composable
-fun CategoryItem(
-    product: ProductModel,
-) {
+fun CategoryItem(product: ProductModel) {
     Column(
         modifier = Modifier
             .clickable { println(product.name) }

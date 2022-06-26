@@ -24,7 +24,7 @@ class MainViewModel : ViewModel() {
     var mealsCategoryTitleStrId: Int? by mutableStateOf(null)
         private set
 
-    fun callAndParseItemCategories() {
+    fun callAndParseItems() {
         // Create Retrofit
         val retrofit = Retrofit.Builder()
             .baseUrl("https://app.check24.de/")
