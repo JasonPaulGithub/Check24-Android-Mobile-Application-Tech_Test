@@ -21,10 +21,15 @@ import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
 import vtsen.hashnode.dev.simplerestapidemo.R
 
 @Composable
-fun CategoryItem(product: ProductModel) {
+fun CategoryItem(
+    navigateToItemScreen: () -> Unit,
+    product: ProductModel
+) {
     Column(
         modifier = Modifier
-            .clickable { println(product.name) }
+            .clickable {
+                navigateToItemScreen()
+            }
             .fillMaxWidth()
             .padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,

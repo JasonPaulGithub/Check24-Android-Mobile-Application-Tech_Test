@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 
 @Composable
-fun ItemCategoriesScreen(viewModel: MainViewModel) {
+fun ItemCategoriesScreen(viewModel: MainViewModel, navigateToItemScreen: () -> Unit) {
 
     Column {
 
@@ -32,7 +32,7 @@ fun ItemCategoriesScreen(viewModel: MainViewModel) {
                 modifier = Modifier.fillMaxSize(),
             ) {
                 items(items = viewModel.products!!) { itemCategory ->
-                    CategoryItem(product = itemCategory)
+                    CategoryItem(navigateToItemScreen, product = itemCategory)
                 }
             }
         }
