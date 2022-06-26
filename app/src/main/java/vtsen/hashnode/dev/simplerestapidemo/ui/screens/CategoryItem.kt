@@ -21,7 +21,7 @@ import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
 import vtsen.hashnode.dev.simplerestapidemo.R
 
 @Composable
-fun MealCategoryItem(
+fun CategoryItem(
     product: ProductModel,
 ) {
     Column(

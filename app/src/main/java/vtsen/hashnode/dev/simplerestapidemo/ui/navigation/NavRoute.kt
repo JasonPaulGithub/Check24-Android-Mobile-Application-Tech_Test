@@ -4,7 +4,7 @@ sealed class NavRoute(val path: String) {
 
     object Home: NavRoute("home")
 
-    object MealCategories: NavRoute("mealcategories")
+    object ItemCategories: NavRoute("mealcategories")
 
     fun withArgs(vararg args: String): String {
         return buildString {

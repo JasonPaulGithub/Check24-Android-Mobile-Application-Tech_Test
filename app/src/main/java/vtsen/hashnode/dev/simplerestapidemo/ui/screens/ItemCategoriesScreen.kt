@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 
 @Composable
-fun MealCategoriesScreen(viewModel: MainViewModel) {
+fun ItemCategoriesScreen(viewModel: MainViewModel) {
 
     Column {
 
@@ -28,12 +28,11 @@ fun MealCategoriesScreen(viewModel: MainViewModel) {
         }
 
         if (viewModel.products != null) {
-
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
             ) {
-                items(items = viewModel.products!!) { mealCategory ->
-                    MealCategoryItem(product = mealCategory)
+                items(items = viewModel.products!!) { itemCategory ->
+                    CategoryItem(product = itemCategory)
                 }
             }
         }

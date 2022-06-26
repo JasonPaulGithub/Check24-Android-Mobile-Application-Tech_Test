@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import vtsen.hashnode.dev.simplerestapidemo.ui.screens.HomeScreen
-import vtsen.hashnode.dev.simplerestapidemo.ui.screens.MealCategoriesScreen
+import vtsen.hashnode.dev.simplerestapidemo.ui.screens.ItemCategoriesScreen
 import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 
 @Composable
@@ -18,7 +18,6 @@ fun BuildNavGraph(navController: NavHostController, viewModel: MainViewModel) {
     ) {
 
         addHomeScreen(navController,this, viewModel)
-
         addMealCategoriesScreen(this, viewModel)
     }
 }
@@ -31,7 +30,7 @@ private fun addHomeScreen(
     navGraphBuilder.composable(route = NavRoute.Home.path) {
         HomeScreen(
             navigateToMealCategories = {
-                navController.navigate(NavRoute.MealCategories.path)
+                navController.navigate(NavRoute.ItemCategories.path)
             },
             viewModel = viewModel,
         )
@@ -42,7 +41,7 @@ private fun addMealCategoriesScreen(
     navGraphBuilder: NavGraphBuilder,
     viewModel: MainViewModel
 ) {
-    navGraphBuilder.composable(route = NavRoute.MealCategories.path) {
-        MealCategoriesScreen(viewModel)
+    navGraphBuilder.composable(route = NavRoute.ItemCategories.path) {
+        ItemCategoriesScreen(viewModel)
     }
 }
