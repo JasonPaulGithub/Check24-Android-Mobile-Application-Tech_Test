@@ -13,12 +13,12 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.NestedJSONModel
-import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.Products
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ResponseModel
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
 
 class MainViewModel : ViewModel() {
 
-    var products: List<Products>? by mutableStateOf(null)
+    var products: List<ProductModel>? by mutableStateOf(null)
         private set
 
     var mealsCategoryTitleStrId: Int? by mutableStateOf(null)
@@ -51,5 +51,5 @@ class MainViewModel : ViewModel() {
 
 interface APIService {
     @GET("products-test.json?header")
-    suspend fun getEmployeesNested(): Response<NestedJSONModel>
+    suspend fun getEmployeesNested(): Response<ResponseModel>
 }

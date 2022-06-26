@@ -1,10 +1,9 @@
-package vtsen.hashnode.dev.simplerestapidemo.GsonItemData
+package vtsen.hashnode.dev.simplerestapidemo.GsonItemModels
 
 import com.google.gson.annotations.SerializedName
 
 
-data class Products(
-
+data class ProductModel(
     @SerializedName("name") var name: String? = null,
     @SerializedName("type") var type: String? = null,
     @SerializedName("id") var id: Int? = null,
@@ -16,6 +15,5 @@ data class Products(
     @SerializedName("description") var description: String? = null,
     @SerializedName("longDescription") var longDescription: String? = null,
     @SerializedName("rating") var rating: Double? = null,
-    @SerializedName("price") var price: Price? = Price()
-
+    @SerializedName("price") var priceModel: PriceModel? = PriceModel()
 )

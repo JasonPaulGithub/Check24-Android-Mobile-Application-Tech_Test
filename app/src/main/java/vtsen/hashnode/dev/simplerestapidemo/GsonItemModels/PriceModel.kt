@@ -1,11 +1,9 @@
-package vtsen.hashnode.dev.simplerestapidemo.GsonItemData
+package vtsen.hashnode.dev.simplerestapidemo.GsonItemModels
 
 import com.google.gson.annotations.SerializedName
 
 
-data class Price(
-
+data class PriceModel(
     @SerializedName("value") var value: Double? = null,
     @SerializedName("currency") var currency: String? = null
-
 )

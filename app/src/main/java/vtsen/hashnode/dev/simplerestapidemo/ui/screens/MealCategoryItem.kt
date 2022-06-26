@@ -16,12 +16,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import vtsen.hashnode.dev.simplerestapidemo.GsonItemData.Products
+import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
 import vtsen.hashnode.dev.simplerestapidemo.R
 
 @Composable
 fun MealCategoryItem(
-    product: Products,
+    product: ProductModel,
 ) {
     Column(
         modifier = Modifier
@@ -48,14 +48,17 @@ fun MealCategoryItem(
             modifier = Modifier
                 .size(150.dp, 150.dp)
                 .clip(MaterialTheme.shapes.medium)
-                .background(Color(derp(product.colorCode)))
+                .background(colorStringToColour(product.colorCode))
         )
 
     }
 }
 
-fun derp(colorCode: String?): Int {
-    // FFCDD2
-    val hex = "0x7FFFFFFF" // with radix specifier
-    return Integer.decode(hex)
+fun colorStringToColour(colorCode: String?): Color {
+    // Chunks x3 then De-Hex value
+    val c = colorCode!!.chunked(2)
+    val d1: Int = c[0].toInt(16)
+    val d2: Int = c[1].toInt(16)
+    val d3: Int = c[2].toInt(16)
+    return Color(d1,d2,d3)
 }
