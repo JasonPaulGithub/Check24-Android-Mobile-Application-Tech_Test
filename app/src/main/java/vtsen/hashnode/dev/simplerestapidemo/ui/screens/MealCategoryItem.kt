@@ -2,6 +2,7 @@ package vtsen.hashnode.dev.simplerestapidemo.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,15 +26,19 @@ fun MealCategoryItem(
 ) {
     Column(
         modifier = Modifier
+            .clickable { println(product.name) }
             .fillMaxWidth()
             .padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
-        Divider(thickness = 2.dp)
+        Divider(thickness = 4.dp)
 
         product.name?.let { Text(text = it, style = MaterialTheme.typography.h4) }
         product.description?.let { Text(text = it, style = MaterialTheme.typography.body1) }
+        Text(text = "Price (EUR):", style = MaterialTheme.typography.body1)
+        product.priceModel!!.value.toString()
+            .let { Text(text = it, style = MaterialTheme.typography.body1) }
 
         Image(
             painter = rememberImagePainter(
@@ -43,7 +48,7 @@ fun MealCategoryItem(
                 }
             ),
 
-            contentDescription = "",
+            contentDescription = "Item Image",
 
             modifier = Modifier
                 .size(150.dp, 150.dp)
@@ -60,5 +65,5 @@ fun colorStringToColour(colorCode: String?): Color {
     val d1: Int = c[0].toInt(16)
     val d2: Int = c[1].toInt(16)
     val d3: Int = c[2].toInt(16)
-    return Color(d1,d2,d3)
+    return Color(d1, d2, d3)
 }
