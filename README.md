@@ -6,9 +6,10 @@ With thanks to vinchamp77 Vincent Tsen for the original fork, which has since be
   -------------------
   Just completed:
   Footer for item page.
-  
-  Currently working on:
   External Url for footer.
   
-  Coming up:
+  Currently working on:
   Favourites button + functionality
+  
+  Coming up:
+  Pull to refresh
