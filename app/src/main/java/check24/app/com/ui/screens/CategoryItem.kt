@@ -17,7 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import check24.app.com.GsonItemModels.ProductModel
+import check24.app.com.dataModels.ProductModel
 import vtsen.hashnode.dev.simplerestapidemo.R
 import check24.app.com.viewmodel.MainViewModel
 

@@ -30,7 +30,7 @@ private fun addHomeScreen(
 ) {
     navGraphBuilder.composable(route = NavRoute.Home.path) {
         HomeScreen(
-            navigateToMealCategories = {
+            navigateToItemCategories = {
                 navController.navigate(NavRoute.ItemCategories.path)
             },
             viewModel = viewModel,

@@ -1,4 +1,4 @@
-package check24.app.com.GsonItemModels
+package check24.app.com.dataModels
 
 import com.google.gson.annotations.SerializedName
 

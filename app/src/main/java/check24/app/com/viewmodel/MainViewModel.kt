@@ -13,15 +13,15 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import check24.app.com.GsonItemModels.ResponseModel
-import check24.app.com.GsonItemModels.ProductModel
+import check24.app.com.dataModels.ResponseModel
+import check24.app.com.dataModels.ProductModel
 
 class MainViewModel : ViewModel() {
 
     var products: List<ProductModel>? by mutableStateOf(null)
         private set
 
-    var mealsCategoryTitleStrId: Int? by mutableStateOf(null)
+    var itemsCategoryTitleStrId: Int? by mutableStateOf(null)
         private set
 
     var chosenItem: ProductModel? by mutableStateOf(null)

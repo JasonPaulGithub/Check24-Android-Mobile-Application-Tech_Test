@@ -21,10 +21,10 @@ fun ItemCategoriesScreen(
 
     Column {
 
-        if (viewModel.mealsCategoryTitleStrId != null) {
+        if (viewModel.itemsCategoryTitleStrId != null) {
             Text(
                 modifier = Modifier.fillMaxWidth(),
-                text = stringResource(id = viewModel.mealsCategoryTitleStrId!!),
+                text = stringResource(id = viewModel.itemsCategoryTitleStrId!!),
                 style = MaterialTheme.typography.h4,
                 textAlign = TextAlign.Center,
             )

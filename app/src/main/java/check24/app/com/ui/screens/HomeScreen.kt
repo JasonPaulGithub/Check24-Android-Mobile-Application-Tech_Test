@@ -12,7 +12,7 @@ import check24.app.com.viewmodel.MainViewModel
 
 @Composable
 fun HomeScreen(
-    navigateToMealCategories: () -> Unit,
+    navigateToItemCategories: () -> Unit,
     viewModel: MainViewModel
 ) {
 
@@ -28,7 +28,7 @@ fun HomeScreen(
                 text = stringResource(R.string.retrofit_item),
                 onClick = {
                     viewModel.callAndParseItems()
-                    navigateToMealCategories()
+                    navigateToItemCategories()
                 },
             )
         }
