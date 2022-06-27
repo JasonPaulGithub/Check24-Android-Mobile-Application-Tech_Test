@@ -10,6 +10,9 @@ With thanks to vinchamp77 Vincent Tsen for the original fork, which has since be
   
   Currently working on:
   Favourites button + functionality
-  
-  Coming up:
-  Pull to refresh
+
+
+Issues:   
+Pull to refresh won't work - the project was forked with Jetpack Compose.  
+Few options were available: https://github.com/google/accompanist was one of the, but it does not pick up "SwipeRefresh" with the dependency installed.  
+I will have to skip this one.
