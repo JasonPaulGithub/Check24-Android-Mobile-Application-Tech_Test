@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
@@ -20,18 +21,21 @@ import check24.app.com.viewmodel.MainViewModel
 fun ItemScreen(viewModel: MainViewModel) {
 
     val product = viewModel.chosenItem
+    val uriHandler = LocalUriHandler.current
 
     Scaffold(
         bottomBar = {
             Text(
-                modifier = Modifier.fillMaxWidth(),
                 text = "© 2016 Check24",
                 style = MaterialTheme.typography.body1,
-                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .padding(all = 10.dp)
+                    .clickable {
+                        uriHandler.openUri("https://m.check24.de/rechtliche-hinweise/?deviceoutput=app")
+                    },
             )
         }
-    ) {
-    }
+    ) {}
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
