@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.screens
+package check24.app.com.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
+import check24.app.com.viewmodel.MainViewModel
 
 @Composable
 fun ItemCategoriesScreen(

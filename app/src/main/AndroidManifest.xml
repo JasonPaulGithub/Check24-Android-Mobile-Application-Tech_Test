@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity
-            android:name="vtsen.hashnode.dev.simplerestapidemo.ui.MainActivity"
+            android:name="check24.app.com.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

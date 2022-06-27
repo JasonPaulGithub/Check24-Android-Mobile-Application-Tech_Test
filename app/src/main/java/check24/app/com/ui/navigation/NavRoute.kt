@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.navigation
+package check24.app.com.ui.navigation
 
 sealed class NavRoute(val path: String) {
 

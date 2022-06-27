@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.viewmodel
+package check24.app.com.viewmodel
 
 import android.util.Log
 import androidx.compose.runtime.getValue
@@ -13,8 +13,8 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ResponseModel
-import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
+import check24.app.com.GsonItemModels.ResponseModel
+import check24.app.com.GsonItemModels.ProductModel
 
 class MainViewModel : ViewModel() {
 

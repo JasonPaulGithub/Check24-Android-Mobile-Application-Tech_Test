@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.theme
+package check24.app.com.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.screens
+package check24.app.com.ui.screens
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

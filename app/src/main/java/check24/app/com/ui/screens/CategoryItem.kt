@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.screens
+package check24.app.com.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,9 +17,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
+import check24.app.com.GsonItemModels.ProductModel
 import vtsen.hashnode.dev.simplerestapidemo.R
-import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
+import check24.app.com.viewmodel.MainViewModel
 
 @Composable
 fun CategoryItem(

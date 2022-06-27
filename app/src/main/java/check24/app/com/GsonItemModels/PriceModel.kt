@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.GsonItemModels
+package check24.app.com.GsonItemModels
 
 import com.google.gson.annotations.SerializedName
 

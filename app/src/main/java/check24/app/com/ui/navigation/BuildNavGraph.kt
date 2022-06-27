@@ -1,14 +1,14 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.navigation
+package check24.app.com.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import vtsen.hashnode.dev.simplerestapidemo.ui.screens.HomeScreen
-import vtsen.hashnode.dev.simplerestapidemo.ui.screens.ItemCategoriesScreen
-import vtsen.hashnode.dev.simplerestapidemo.ui.screens.ItemScreen
-import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
+import check24.app.com.ui.screens.HomeScreen
+import check24.app.com.ui.screens.ItemCategoriesScreen
+import check24.app.com.ui.screens.ItemScreen
+import check24.app.com.viewmodel.MainViewModel
 
 @Composable
 fun BuildNavGraph(navController: NavHostController, viewModel: MainViewModel) {

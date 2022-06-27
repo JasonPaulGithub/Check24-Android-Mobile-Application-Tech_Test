@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.screens
+package check24.app.com.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import vtsen.hashnode.dev.simplerestapidemo.R
-import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
+import check24.app.com.viewmodel.MainViewModel
 
 @Composable
 fun HomeScreen(
