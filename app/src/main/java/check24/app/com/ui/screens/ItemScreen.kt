@@ -36,7 +36,9 @@ fun ItemScreen(viewModel: MainViewModel) {
                 modifier = Modifier
                     .padding(all = 8.dp)
                     .clickable {
-                        uriHandler.openUri("https://m.check24.de/rechtliche-hinweise/?deviceoutput=app")
+                        uriHandler.openUri(
+                            "https://m.check24.de/rechtliche-hinweise/?deviceoutput=app"
+                        )
                     },
             )
         }
@@ -88,7 +90,8 @@ fun ItemScreen(viewModel: MainViewModel) {
         Button(
             onClick = {
                 mToast(mContext)
-
+                viewModel.favourites.add(product)
+                println("Total favourites: "+viewModel.favourites.size)
             },
             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0XFF0F9D58))
         ) {

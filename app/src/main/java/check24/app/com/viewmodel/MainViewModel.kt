@@ -27,6 +27,8 @@ class MainViewModel : ViewModel() {
     var chosenItem: ProductModel? by mutableStateOf(null)
         private set
 
+    var favourites = mutableSetOf<ProductModel>()
+
     fun callAndParseItems() {
 
         // Create Retrofit
