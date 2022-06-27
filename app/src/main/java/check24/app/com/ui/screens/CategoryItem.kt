@@ -1,12 +1,7 @@
 package check24.app.com.ui.screens
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -28,24 +23,20 @@ fun CategoryItem(
     viewModel: MainViewModel
 ) {
 
-    Column(
+    Row(
         modifier = Modifier
             .clickable {
                 viewModel.chosenItem(product)
                 navigateToItemScreen()
             }
-            .fillMaxWidth()
-            .padding(8.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+            .border(
+                BorderStroke(2.dp, Color.Gray)
+            )
+            .padding(all = 20.dp)
+        ,
+        verticalAlignment = Alignment.CenterVertically
+
     ) {
-
-        Divider(thickness = 4.dp)
-
-        product.name?.let { Text(text = it, style = MaterialTheme.typography.h4) }
-        product.description?.let { Text(text = it, style = MaterialTheme.typography.body1) }
-        Text(text = "Price (EUR):", style = MaterialTheme.typography.body1)
-        product.priceModel!!.value.toString()
-            .let { Text(text = it, style = MaterialTheme.typography.body1) }
 
         Image(
             painter = rememberImagePainter(
@@ -55,15 +46,27 @@ fun CategoryItem(
                 }
             ),
 
-            contentDescription = "Item Image",
+            contentDescription = product.description,
 
             modifier = Modifier
-                .size(150.dp, 150.dp)
+                .size(120.dp, 100.dp)
                 .clip(MaterialTheme.shapes.medium)
                 .background(colorStringToColour(product.colorCode))
         )
 
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            product.name?.let { Text(text = it, style = MaterialTheme.typography.h4) }
+            product.description?.let { Text(text = it, style = MaterialTheme.typography.body1)  }
+            product.priceModel!!.value.toString()
+                .let { Text(text = "Price: €$it", style = MaterialTheme.typography.h4) }
+        }
     }
+
 }
 
 fun colorStringToColour(colorCode: String?): Color {

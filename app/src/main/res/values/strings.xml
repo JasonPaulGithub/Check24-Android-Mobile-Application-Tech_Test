@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Check24 Rest API App</string>
-    <string name="retrofit_item">Check24</string>
+    <string name="retrofit_item">Welcome to Check24</string>
     <string name="retrofit_gson">Retrofit + Gson</string>
 </resources>
