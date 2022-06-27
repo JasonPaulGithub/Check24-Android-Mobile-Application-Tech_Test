@@ -3,6 +3,7 @@ package check24.app.com.ui.screens
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,6 +20,18 @@ import check24.app.com.viewmodel.MainViewModel
 fun ItemScreen(viewModel: MainViewModel) {
 
     val product = viewModel.chosenItem
+
+    Scaffold(
+        bottomBar = {
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = "© 2016 Check24",
+                style = MaterialTheme.typography.body1,
+                textAlign = TextAlign.Center,
+            )
+        }
+    ) {
+    }
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
