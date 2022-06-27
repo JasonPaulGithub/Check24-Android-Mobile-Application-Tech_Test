@@ -1,21 +1,26 @@
 package check24.app.com.ui.screens
 
+import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import check24.app.com.viewmodel.MainViewModel
 import coil.compose.rememberImagePainter
 import vtsen.hashnode.dev.simplerestapidemo.R
-import check24.app.com.viewmodel.MainViewModel
+
+private fun mToast(context: Context) {
+    Toast.makeText(context, "Item added to favourites!", Toast.LENGTH_LONG).show()
+}
 
 @Composable
 fun ItemScreen(viewModel: MainViewModel) {
@@ -29,7 +34,7 @@ fun ItemScreen(viewModel: MainViewModel) {
                 text = "© 2016 Check24",
                 style = MaterialTheme.typography.body1,
                 modifier = Modifier
-                    .padding(all = 10.dp)
+                    .padding(all = 8.dp)
                     .clickable {
                         uriHandler.openUri("https://m.check24.de/rechtliche-hinweise/?deviceoutput=app")
                     },
@@ -50,7 +55,7 @@ fun ItemScreen(viewModel: MainViewModel) {
 
         Row(
             modifier = Modifier
-                .padding(all = 20.dp),
+                .padding(all = 10.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
@@ -64,7 +69,7 @@ fun ItemScreen(viewModel: MainViewModel) {
                 contentDescription = product.description,
 
                 modifier = Modifier
-                    .size(150.dp, 150.dp)
+                    .size(110.dp, 110.dp)
                     .clip(MaterialTheme.shapes.medium)
                     .background(colorStringToColour(product.colorCode))
             )
@@ -77,9 +82,22 @@ fun ItemScreen(viewModel: MainViewModel) {
         product.rating.toString()
             .let { Text(text = "Rating: $it / 5", style = MaterialTheme.typography.body1) }
 
+        val mContext = LocalContext.current
+
+
+        Button(
+            onClick = {
+                mToast(mContext)
+
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0XFF0F9D58))
+        ) {
+            Text(text = "Add to favourites", color = Color.White)
+        }
+
         Row(
             modifier = Modifier
-                .padding(all = 12.dp),
+                .padding(all = 10.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
@@ -92,7 +110,7 @@ fun ItemScreen(viewModel: MainViewModel) {
 
         Row(
             modifier = Modifier
-                .padding(all = 16.dp)
+                .padding(all = 10.dp)
                 .verticalScroll(rememberScrollState())
                 .border(
                     BorderStroke(2.dp, Color.Gray)
