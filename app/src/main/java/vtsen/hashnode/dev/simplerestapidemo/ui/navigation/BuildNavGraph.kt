@@ -12,7 +12,6 @@ import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 
 @Composable
 fun BuildNavGraph(navController: NavHostController, viewModel: MainViewModel) {
-
     NavHost(
         navController = navController,
         startDestination = NavRoute.Home.path
@@ -20,7 +19,7 @@ fun BuildNavGraph(navController: NavHostController, viewModel: MainViewModel) {
 
         addHomeScreen(navController, this, viewModel)
         addItemCategoriesScreen(navController, this, viewModel)
-        addItemScreen(this)
+        addItemScreen(this, viewModel)
     }
 }
 
@@ -56,8 +55,9 @@ private fun addItemCategoriesScreen(
 
 fun addItemScreen(
     navGraphBuilder: NavGraphBuilder,
+    viewModel: MainViewModel,
 ) {
     navGraphBuilder.composable(route = NavRoute.ItemScreen.path) {
-        ItemScreen()
+        ItemScreen(viewModel)
     }
 }

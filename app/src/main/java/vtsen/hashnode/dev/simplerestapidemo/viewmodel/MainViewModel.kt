@@ -24,6 +24,9 @@ class MainViewModel : ViewModel() {
     var mealsCategoryTitleStrId: Int? by mutableStateOf(null)
         private set
 
+    var chosenItem: ProductModel? by mutableStateOf(null)
+        private set
+
     fun callAndParseItems() {
 
         // Create Retrofit
@@ -46,6 +49,10 @@ class MainViewModel : ViewModel() {
                 }
             }
         }
+    }
+
+    fun chosenItem(product: ProductModel) {
+        chosenItem = product
     }
 
 }

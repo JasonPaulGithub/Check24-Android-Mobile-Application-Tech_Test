@@ -19,15 +19,19 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import vtsen.hashnode.dev.simplerestapidemo.GsonItemModels.ProductModel
 import vtsen.hashnode.dev.simplerestapidemo.R
+import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 
 @Composable
 fun CategoryItem(
     navigateToItemScreen: () -> Unit,
-    product: ProductModel
+    product: ProductModel,
+    viewModel: MainViewModel
 ) {
+
     Column(
         modifier = Modifier
             .clickable {
+                viewModel.chosenItem(product)
                 navigateToItemScreen()
             }
             .fillMaxWidth()
