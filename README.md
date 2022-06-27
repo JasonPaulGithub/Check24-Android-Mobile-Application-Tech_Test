@@ -1,4 +1,4 @@
-# Simple REST API App Demo (Jetpack Compose)
+# Simple Mobile Phone Application
 
 First time with Kotlin!  
 Built with Android Studio. 
